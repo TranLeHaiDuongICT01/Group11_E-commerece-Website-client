@@ -1,15 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { publicRequest } from "../config";
-import { addProduct } from "../redux/cartRedux";
-import { useDispatch, useSelector } from "react-redux";
 import TransitionsModal from "../component/Modal";
 const ProductDetails = () => {
   const [index, setIndex] = useState(-1);
   const myRef = useRef();
-  const dispatch = useDispatch();
   const [product, setProduct] = useState();
-  const cart = useSelector((state) => state.cart);
   const [openModal, setOpenModal] = useState(false);
   useEffect(() => {
     if (product) {
@@ -31,12 +27,6 @@ const ProductDetails = () => {
     if (index !== i)
       images[index].className = images[index].className.replace("active", "");
     setIndex(i);
-  };
-  const handleAddToCart = () => {
-    if (cart?.products?.findIndex((item) => item?._id === product._id) !== -1) {
-      return setOpenModal(true);
-    }
-    dispatch(addProduct({ ...product, quantity: 1 }));
   };
   if (!product) return <div>Loading</div>;
   return (
@@ -68,9 +58,6 @@ const ProductDetails = () => {
               <img key={i} src={img.url} alt="" onClick={() => handleTab(i)} />
             ))}
           </div>
-          <button onClick={handleAddToCart} className="add-btn">
-            Add to cart
-          </button>
         </div>
       </div>
     </div>
