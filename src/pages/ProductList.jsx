@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import Newsletter from "../component/Newsletter";
 import Products from "../component/Products";
 import {
   Containter,
@@ -61,6 +62,7 @@ const ProductList = () => {
         </Filter>
       </FilterContainer>
       <Products category={category} filter={filter} sort={sort} />
+      <Newsletter />
     </Containter>
   );
 };

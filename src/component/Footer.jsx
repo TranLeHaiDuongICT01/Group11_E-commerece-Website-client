@@ -20,9 +20,9 @@ import {
   SocialContainer,
   SocialIcon,
 } from "./style-component/Footer";
-const Footer = ({ user }) => {
+const Footer = () => {
   return (
-    <Container style={{ display: user ? "" : "none" }}>
+    <Container>
       <Left>
         <Logo></Logo>
         <Desc>

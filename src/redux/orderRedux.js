@@ -1,23 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const productSlice = createSlice({
+const orderSlice = createSlice({
     name: "product",
     initialState: {
-        products: [],
+        orders: [],
         isFetching: false,
         error: false,
-        numberOfPage: 1
     },
     reducers: {
         startFetching: (state) => {
             state.isFetching = true
             state.error = false
         },
-        getProducts: (state, action) => {
+        getOrders: (state, action) => {
             state.isFetching = false
             state.error = false
-            state.products = action.payload.products
-            state.numberOfPage = action.payload.numberOfPage
+            state.orders = action.payload
         },
         fetchingError: (state, action) => {
             state.isFetching = false
@@ -32,5 +30,5 @@ const productSlice = createSlice({
         }
     }
 })
-export const { startFetching, getProducts, fetchingError, resetError, endFetching } = productSlice.actions
-export default productSlice.reducer
+export const { startFetching, getOrders, fetchingError, resetError, endFetching } = orderSlice.actions
+export default orderSlice.reducer

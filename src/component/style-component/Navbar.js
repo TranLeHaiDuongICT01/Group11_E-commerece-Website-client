@@ -52,7 +52,7 @@ export const Menu = styled.ul`
     ${tablet({
     display: 'flex',
     flexDirection: 'column',
-    height: '400px',
+    height: '500px',
     position: 'absolute',
     top: '80px',
     opacity: 2,
