@@ -89,7 +89,7 @@ const OrderDetail = () => {
                     />
                   </td>
                   <td>{item?.title}</td>
-                  <td>{item?.quantity}</td>
+                  <td>{product?.quantity}</td>
                   <td>{item?.price}</td>
                 </tr>
               );
