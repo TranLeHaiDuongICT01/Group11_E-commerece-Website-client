@@ -52,6 +52,7 @@ const Success = () => {
               ? "paypal"
               : "coin",
         });
+        console.log(response)
         setOrder(response?.data);
         dispatch(emptyCart());
       } catch (error) {
@@ -120,9 +121,11 @@ const Success = () => {
                       ""}
                   </td>
                   <td>
-                    {order?.payment_method_details?.card?.brand || data
-                      ? "Paypal"
-                      : "XTZ"}
+                  {order?.address?.postal_code === "123123"
+                  ? "Stripe" :
+                  order?.address?.postal_code === "95131"
+                  ? "Paypal" : 
+                  "XTZ"}
                   </td>
                 </tr>
               </tbody>

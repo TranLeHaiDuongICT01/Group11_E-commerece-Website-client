@@ -57,6 +57,7 @@ const Register = () => {
             required
           />
           <Input
+            type="password"
             placeholder="Password"
             name="password"
             value={formData.password}
@@ -64,6 +65,7 @@ const Register = () => {
             required
           />
           <Input
+            type="password"
             placeholder="Confirm password"
             name="confirmPassword"
             value={formData.confirmPassword}
